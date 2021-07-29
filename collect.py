@@ -6,7 +6,7 @@ from repo_collector import RepoCollector
 
 
 def main():
-    parser = argparse.ArgumentParser("Collect Github repositories by uer")
+    parser = argparse.ArgumentParser("Collect Github repositories by user")
     parser.add_argument("-u", "--users", required=True, nargs="+")
     parser.add_argument("-t", "--token", required=True)
     parser.add_argument("-l", "--layers", required=False, type=int)
