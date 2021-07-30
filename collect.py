@@ -11,9 +11,10 @@ def main():
     parser.add_argument("-t", "--token", required=True)
     parser.add_argument("-l", "--layers", required=False, type=int)
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("-d", "--download-dir", default="downloads", type=str)
     args = parser.parse_args()
 
-    collector = RepoCollector(args.token)
+    collector = RepoCollector(args.token, args.download_dir)
     for user in args.users:
         collector.add_user(user)
     if args.layers:

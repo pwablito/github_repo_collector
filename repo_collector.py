@@ -5,7 +5,7 @@ import shutil
 
 
 class RepoCollector:
-    def __init__(self, token, download_dir="downloads"):
+    def __init__(self, token, download_dir):
         self.download_dir = download_dir
         self.token = token
         self.g = Github(token)
@@ -29,6 +29,7 @@ class RepoCollector:
                 self.repos.append(repo)
 
     def download_repos(self, progress=True):
+        os.mkdir(self.download_dir)
         for i in range(len(self.repos)):
             if (progress):
                 print("Downloading repo {} of {}: {}/{}".format(i + 1, len(self.repos), self.repos[i].owner.login, self.repos[i].name))
