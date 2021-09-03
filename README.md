@@ -1,4 +1,4 @@
-# Github Repo Collector
+# GitHub Repo Collector
 
 A tool to download Github repositories by user
 
